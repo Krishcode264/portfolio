@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        <div className="main-wrapper     w-[100vw] min-h-[100vh] flex flex-col  ">
+        <div className="main-wrapper     w-[100vw] h-[100vh] flex flex-col  ">
           <div
           className=" flex-1 h-70vh  w-full overflow-auto  flex items-center justify-center"
           >
