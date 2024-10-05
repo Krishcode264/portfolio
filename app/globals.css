@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: var(--foreground);
+  background: rgb(21, 19, 37);
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+div{
+  box-sizing: border-box;
+
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+   ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #391f36;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #151414;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+ /* background: rgb(20, 13, 39); */
+.skill{
+background: linear-gradient(to right, rgba(20,13,39, 0.8), rgba(11, 0, 11, 0.8));
+}
+.project{
+  background: #c265e70e;
+ 
+}
+.main-wrapper {
+  background: #250c6307;
+}
+.main-wrapper::before {
+  z-index: -20;
+
+  content: "";
+
+  border-radius: 50%;
+  position: absolute;
+  animation: rotate 8s infinite alternate-reverse;
+
+  transition: all;
+
+  box-shadow: 1vw 5vh 60vh 12vh rgb(38, 149, 240),
+    30vw 85vh 63vh 8vh rgb(183, 38, 240);
+}
+.glass {
+  opacity: 0.6;
+}
+
+.resume{
+  background: #d4ccd76a;
+
+
+}
+@keyframes rotatee {
+  0% {
+    box-shadow: 200px 330px 350px 100px rgb(38, 149, 240),
+      -300px -400px 335px 100px rgb(183, 38, 240),
+      450px -410px 240px 90px rgb(217, 50, 89);
+  }
+  33% {
+    box-shadow: 200px 330px 350px 100px rgb(81, 45, 245),
+      -300px -400px 335px 100px rgb(222, 51, 51),
+      450px -410px 240px 90px rgb(217, 50, 89);
+  }
+  66% {
+    box-shadow: 200px 330px 350px 100px rgb(229, 142, 29),
+      -300px -400px 335px 100px rgb(115, 230, 170),
+      450px -410px 240px 90px rgb(217, 50, 89);
+  }
+  100% {
+    box-shadow: 200px 330px 350px 100px rgb(38, 149, 240),
+      -300px -400px 335px 100px rgb(183, 38, 240),
+      450px -410px 240px 90px rgb(217, 50, 89);
+  }
+}
