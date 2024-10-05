@@ -21,6 +21,7 @@ const Intro = () => {
         className="w-24 h-24 rounded-full"
         alt="photo"
         src={p1}
+        unoptimized
       ></Image>
 
       <div className="flex items-center gap-2">
