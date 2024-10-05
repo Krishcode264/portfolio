@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
- import p1 from "@/public/profile/p.png"
+ import p1 from "@/public/profile/p.jpg"
 import ln from "@/public/logos/ln2.png"
 import gh from "@/public/logos/gh.png";
 import Link from "next/link";
