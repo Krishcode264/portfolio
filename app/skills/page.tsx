@@ -55,7 +55,7 @@ const Skills = () => {
     <div className=" h-full md:w-[70%] p-2 flex flex-col  justify-center  gap-4 ">
       <SkillContainer skills={FrontEndSkills} type="Front End" />
 
-      <SkillContainer skills={BackEndSkills} type="Backend End" />
+      <SkillContainer skills={BackEndSkills} type="Backend " />
 
       <SkillContainer skills={DevOpsSkills} type="DevOps" />
     </div>

@@ -32,9 +32,10 @@ const Intro = () => {
       <div className="flex  h-[70%]  flex-col gap-4 items-center justify-center ">
         <span className="md:w-[70%] w-full ">
           <h1 className="text-slate-300 font-mono sm:text-2xl mb-20 text-center text-wrap">
-            Welcome to my portfolio! I am krishna zade, a passionate full-stack
-            web developer dedicated to creating innovative solutions that
-            enhance user experiences and solve real-world problems
+            Hey there! I’m Krishna Zade, a full-stack web developer with a
+            passion for building solutions that don’t just work – they make life
+            easier and more exciting. I love crafting user-friendly experiences
+            and solving real-world challenges, one line of code at a time.
           </h1>
         </span>
 
