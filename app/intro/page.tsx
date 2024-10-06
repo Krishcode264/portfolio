@@ -25,8 +25,6 @@ import { heroSkills } from "../exports";
     );
   };
 const Intro = () => {
-
-
   return (
     <div className="h-full overflow-hidden ">
       <div className="flex  h-[70%]  flex-col gap-4 items-center justify-center ">
@@ -69,12 +67,12 @@ const Intro = () => {
       <div className="    w-[90%] md:w-[70%] mx-auto  mt-4 overflow-hidden  rounded-md ">
         <div className="p-4   w-full gap-4  flex   move ">
           {heroSkills.map((s) => {
-            return <HeroSkill key={s.name} logo={s.logo} name={s.name} />;
+            return <HeroSkill key={s.name} logo={s.logo} name={s.name} />
           })}
         </div>
         <div className="p-4   w-full gap-4  flex   rever">
           {heroSkills.map((s) => {
-            return <HeroSkill key={s.name} logo={s.logo} name={s.name} />;
+            return <HeroSkill key={s.name} logo={s.logo} name={s.name} />
           })}
         </div>
       </div>

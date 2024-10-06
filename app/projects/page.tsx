@@ -1,14 +1,8 @@
 import React from 'react'
-import ln from "@/public/logos/ln2.png";
-import github from "@/public/logos/gh.png";
-import earth from "@/public/logos/earth.png";
+
 import Image from 'next/image'
 import { projects, type Project  } from '../exports'
-const geticon = {
-  linkedin: ln,
-  github: github,
-  website: earth,
-};
+
 
 import Link from 'next/link'
 type linksType="linkedin"|"website"|"github"
