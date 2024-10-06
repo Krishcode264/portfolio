@@ -20,14 +20,14 @@ div{
 }
 
    ::-webkit-scrollbar {
-            width: 12px;
-            height: 12px;
+            width: 4px;
+            height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #391f36;
+            background: #110505;
         }
         ::-webkit-scrollbar-thumb {
-            background: #151414;
+            background: #8135a2;
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
@@ -36,15 +36,56 @@ div{
 
  /* background: rgb(20, 13, 39); */
 .skill{
-background: linear-gradient(to right, rgba(20,13,39, 0.8), rgba(11, 0, 11, 0.8));
+
+background: linear-gradient(to right, rgba(27, 20, 45, 0.9), rgba(190, 174, 214, 0.056));
 }
 .project{
-  background: #c265e70e;
+  background: #c265e72e ;
+
  
+}
+
+.move{
+
+   animation: marque 20s linear infinite ;
+}
+.rever{
+   animation: marque 20s linear infinite reverse;
+}
+@keyframes marque {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-250%);
+  }
+}
+@keyframes marque {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-250%);
+  }
+}
+.project:hover{
+  transform: scale(1.03);
+  transition: transform 0.5s;
 }
 .main-wrapper {
   background: #250c6307;
+  
+
 }
+.nav{
+
+
+}
+.active-nav-item{
+  color: #e521c1;
+  transition: color 0.5s;
+}
+
 .main-wrapper::before {
   z-index: -20;
 
@@ -52,7 +93,7 @@ background: linear-gradient(to right, rgba(20,13,39, 0.8), rgba(11, 0, 11, 0.8))
 
   border-radius: 50%;
   position: absolute;
-  animation: rotate 8s infinite alternate-reverse;
+  animation: rotate 10s infinite  alternate-reverse;
 
   transition: all;
 
@@ -70,23 +111,23 @@ background: linear-gradient(to right, rgba(20,13,39, 0.8), rgba(11, 0, 11, 0.8))
 }
 @keyframes rotatee {
   0% {
-    box-shadow: 200px 330px 350px 100px rgb(38, 149, 240),
-      -300px -400px 335px 100px rgb(183, 38, 240),
+    box-shadow: 20px 330px 350px 100px rgb(38, 149, 240),
+      -300px -40px 35px 10px rgb(183, 38, 240),
       450px -410px 240px 90px rgb(217, 50, 89);
   }
   33% {
     box-shadow: 200px 330px 350px 100px rgb(81, 45, 245),
-      -300px -400px 335px 100px rgb(222, 51, 51),
+      300px 400px 335px 100px rgb(222, 51, 51),
       450px -410px 240px 90px rgb(217, 50, 89);
   }
   66% {
     box-shadow: 200px 330px 350px 100px rgb(229, 142, 29),
-      -300px -400px 335px 100px rgb(115, 230, 170),
-      450px -410px 240px 90px rgb(217, 50, 89);
+      80vh 400px 350px 100px rgb(115, 230, 170),
+      450vh 410px 240px 90px rgb(217, 50, 89);
   }
   100% {
-    box-shadow: 200px 330px 350px 100px rgb(38, 149, 240),
-      -300px -400px 335px 100px rgb(183, 38, 240),
-      450px -410px 240px 90px rgb(217, 50, 89);
-  }
+    box-shadow: 200vh 330vh 350px 100px rgb(38, 149, 240),
+      -20vh 70vh 335px 100px rgb(183, 38, 240),
+      50px 310px 240px 90px rgb(217, 50, 89);
+}
 }

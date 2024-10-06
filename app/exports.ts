@@ -195,5 +195,5 @@ const socialSphere: Project = {
   ],
 };
 
-
+export const heroSkills:SkillArray=[...FrontEndSkills,...BackEndSkills,...DevOpsSkills]
 export const projects=[socialSphere,petShop]
