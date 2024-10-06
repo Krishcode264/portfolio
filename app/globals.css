@@ -12,6 +12,9 @@ div{
   box-sizing: border-box;
 
 }
+.project-link{
+  color: #1e8eea;
+}
 
 @layer utilities {
   .text-balance {

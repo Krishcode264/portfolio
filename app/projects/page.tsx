@@ -16,8 +16,8 @@ const Links=({type,url}:{url:string,type:linksType})=>{
 
 
 return(
-    <Link href={url}>
-        <Image width={5} height={5} className='w-6 h-6  ' src={geticon[type]} alt="icon" unoptimized/>
+    <Link href={url} className='project-link font-serif text-sm'>
+      {type}
     </Link>
 )
 }
@@ -40,7 +40,7 @@ return (
 
       <div>
         <div className="flex flex-col h-full justify-between items-end ">
-          <p className="text-slate-300">{p.description}</p>
+          <p className="text-slate-300 mb-4">{p.description}</p>
           <div className="flex gap-2  absolute bottom-2 ">
             {linksArray.map((l) => {
               return (
