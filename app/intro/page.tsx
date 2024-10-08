@@ -1,6 +1,6 @@
 import React from "react";
 import Image, { type StaticImageData } from "next/image";
-import p1 from "@/public/profile/p.jpg";
+import p1 from "@/public/profile/pic.jpg";
 import ln from "@/public/logos/ln2.png";
 import gh from "@/public/logos/gh.png";
 import Link from "next/link";
@@ -40,7 +40,7 @@ const Intro = () => {
         <Image
           width={12}
           height={12}
-          className="w-24 h-24 rounded-full"
+          className="w-28 h-28 rounded-full"
           alt="photo"
           src={p1}
           unoptimized
