@@ -1,17 +1,20 @@
 
-import React from 'react'
-
 const Resume = () => {
-  
+
+    
   return (
-    <div className="">
-      <span className=" rounded-md resume px-4 py-8  text-slate-200 text-2xl ">
-        Pdf Viewer coming soon
-
-
-      </span>
+    <div className="w-full h-full">
+      <embed
+        src="general/r.pdf"
+       
+        className="m-auto "
+        
+        style={{ width: "80%", height: "100%", border: "none" }}
+        title="Resume PDF"
+      ></embed>
     </div>
   );
 }
 
 export default Resume
+

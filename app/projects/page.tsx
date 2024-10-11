@@ -9,11 +9,11 @@ type linksType="linkedin"|"website"|"github"
 const Links=({type,url}:{url:string,type:linksType})=>{
 
 
-return(
-    <Link href={url} className='project-link font-serif text-sm'>
-      {type}
-    </Link>
-)
+return (
+  <Link href={url} className="project-link font-serif text-sm" target="_blank">
+    {type}
+  </Link>
+);
 }
 
 const Project=({p}:{p:Project})=>{
@@ -23,7 +23,7 @@ const Project=({p}:{p:Project})=>{
    });
 
 return (
-  <div className="project relative  md:h-[70%] mx-auto sm:w-[70%] my-auto      hover:cursor-pointer rounded-md p-2 ">
+  <div className="project relative  md:h-[70%] mx-auto sm:w-[70%] w-[90%] my-auto      hover:cursor-pointer rounded-md p-2 ">
     <h4 className="text-xl text-slate-300 mb-2">{p.name}</h4>
  
       <Image
@@ -52,7 +52,7 @@ return (
 
 const Projects = () => {
   return (
-    <div className='flex   overflow-y-auto flex-col md:flex-row gap-4 sm:p-4 p-2 md:w-[80%] lg:w-[70%] h-full items-stretch '>
+    <div className='flex   overflow-y-auto flex-col md:flex-row gap-4 sm:p-4 px-5 md:w-[80%] lg:w-[70%] h-full items-stretch '>
      
 {projects.map((p)=>{
 return (

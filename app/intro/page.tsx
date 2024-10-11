@@ -30,10 +30,11 @@ const Intro = () => {
       <div className="flex  h-[70%]  flex-col gap-4 items-center justify-center ">
         <span className="md:w-[70%] w-full ">
           <h1 className="text-slate-300 font-mono sm:text-2xl mb-20 text-center text-wrap">
-            Hey there! I’m Krishna Zade, a full-stack web developer from India with a
-            passion for building solutions that don’t just work – they make life
-            easier and more exciting. I love crafting user-friendly experiences
-            and solving real-world challenges, one line of code at a time.
+            Hey there! I’m Krishna Zade, a full-stack web developer from India
+            with a passion for building solutions that don’t just work – they
+            make life easier and more exciting. I love crafting user-friendly
+            experiences and solving real-world challenges, one line of code at a
+            time.
           </h1>
         </span>
 
@@ -47,14 +48,17 @@ const Intro = () => {
         ></Image>
 
         <div className="flex items-center gap-2">
-          <Link href={"https://www.linkedin.com/in/krishna-zade-644b47243"}>
+          <Link
+            href={"https://www.linkedin.com/in/krishna-zade-644b47243"}
+            target="_blank"
+          >
             <Image
               src={ln}
               className="w-6 h-6 rounded-full  bg-blue-500"
               alt="ln logo "
             ></Image>
           </Link>
-          <Link href={"https://github.com/Krishcode264"}>
+          <Link href={"https://github.com/Krishcode264"} target="_blank">
             <Image
               src={gh}
               className="w-6 h-6  bg-slate-300  rounded-full"
@@ -67,12 +71,12 @@ const Intro = () => {
       <div className="    w-[90%] md:w-[70%] mx-auto  mt-4 overflow-hidden  rounded-md ">
         <div className="p-4   w-full gap-4  flex   move ">
           {heroSkills.map((s) => {
-            return <HeroSkill key={s.name} logo={s.logo} name={s.name} />
+            return <HeroSkill key={s.name} logo={s.logo} name={s.name} />;
           })}
         </div>
         <div className="p-4   w-full gap-4  flex   rever">
           {heroSkills.map((s) => {
-            return <HeroSkill key={s.name} logo={s.logo} name={s.name} />
+            return <HeroSkill key={s.name} logo={s.logo} name={s.name} />;
           })}
         </div>
       </div>
