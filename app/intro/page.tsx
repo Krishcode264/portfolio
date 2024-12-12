@@ -26,9 +26,9 @@ import { heroSkills } from "../exports";
   };
 const Intro = () => {
   return (
-    <div className="h-full overflow-hidden  ">
-      <div className="flex  h-[70%]  flex-col gap-4 items-center justify-center ">
-        <span className="md:w-[70%]  p-4  mb:mt-8 ">
+    <div className="lg:w-[80%] mx-auto  h-full flex  flex-col  justify-evenly overflow-hidden   ">
+      <div className="flex    flex-col gap-4 items-center justify-center ">
+        <span className=" p-4  ">
           <h1 className="text-slate-300 font-mono sm:text-2xl mb-20 text-center text-wrap">
             Hey there! I’m Krishna Zade, a full-stack web developer from India
             with a passion for building solutions that don’t just work – they
@@ -68,7 +68,7 @@ const Intro = () => {
         </div>
       </div>
 
-      <div className="    w-[90%] md:w-[70%] mx-auto  mt-4 overflow-hidden  rounded-md ">
+      <div className="    w-[90%] md:w-full mx-auto  mt-4 overflow-hidden  rounded-md ">
         <div className="p-4   w-full gap-4  flex   move ">
           {heroSkills.map((s) => {
             return <HeroSkill key={s.name} logo={s.logo} name={s.name} />;

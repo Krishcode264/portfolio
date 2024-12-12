@@ -23,7 +23,7 @@ const Project=({p}:{p:Project})=>{
    });
 
 return (
-  <div className="project  font-mono relative   mx-auto sm:w-[70%] w-[90%] my-auto      hover:cursor-pointer rounded-md p-2 ">
+  <div className="project  font-mono relative   mx-auto sm:w-[60%] w-[90%] my-auto      hover:cursor-pointer rounded-md p-2 ">
     <h4 className="text-xl text-slate-300 mb-2">{p.name}</h4>
 
     <Image
@@ -55,7 +55,7 @@ return (
 
 const Projects = () => {
   return (
-    <div className='flex p-4 mt-8  overflow-y-auto flex-col  gap-8 sm:p-4 px-5 md:w-[80%] lg:w-[70%] h-full items-stretch '>
+    <div className='flex h-full p-4 mb-4 md:py-12 flex-col gap-4  md:gap-8  '>
      
 {projects.map((p)=>{
 return (

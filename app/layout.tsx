@@ -19,14 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        <div className="main-wrapper     w-[100vw] h-screen flex flex-col  ">
-          <div
-          className="  h-full w-full overflow-auto  flex items-center justify-center"
-          >
+        <div className=" main-wrapper h-[100dvh] w-screen  flex flex-col  ">
+          <div className="md:w-[80%]  lg:w-[70%]  w-full  mx-auto   h-full overflow-auto  flex items-center justify-center">
             {children}
           </div>
 
-       <Nav/>
+          <Nav />
         </div>
       </body>
     </html>
