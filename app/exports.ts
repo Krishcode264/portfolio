@@ -44,6 +44,9 @@ import userprofile from "@/public/projects/ss/userprofile.png";
 import front from "@/public/projects/petshop/front.png"
 import petAuth from "@/public/projects/petshop/auth.png";
 
+
+//imports for pizza app
+import pizza from "@/public/projects/pizza/pizza.png"
 export  type SkillArray={name:string,logo:string|StaticImageData}[];
 // Frontend Skills
 export const FrontEndSkills: SkillArray = [
@@ -66,7 +69,7 @@ export const BackEndSkills: SkillArray = [
   { name: "Prisma", logo: prisma },
   { name: "MongoDB", logo: mdb },
   { name: "GraphQL", logo: graphql },
-  { name: "Sockek.io", logo: socket },
+  { name: "Socket.io", logo: socket },
   { name: "PostgresQL", logo: pg },
   { name: "Bun.js", logo: bun },
 ];
@@ -132,6 +135,20 @@ const petShop: Project = {
   ],
 };
 
+const pizzaShop: Project = {
+  name: "Pizza Shop Front-End Application",
+  thumbnail: pizza, // Using the front image as the thumbnail
+  links: {
+    website: "https://pizzbazaar.netlify.app/",
+    github: "https://github.com/Krishcode264/pizz-app-project-react-tilwindcss",
+    linkedin:""
+  },
+  description:
+    "A beginner-level project built using React to demonstrate foundational skills in front-end development and user interface design",
+  photos: [
+   
+  ],
+};
 const socialSphere: Project = {
   name: "Social Sphere",
   thumbnail: thumbnail, // Using the feed image as the thumbnail
@@ -196,4 +213,4 @@ const socialSphere: Project = {
 };
 
 export const heroSkills:SkillArray=[...FrontEndSkills,...BackEndSkills,...DevOpsSkills]
-export const projects=[socialSphere,petShop]
+export const projects=[socialSphere,petShop,pizzaShop]

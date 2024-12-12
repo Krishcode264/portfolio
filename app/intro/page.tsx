@@ -26,9 +26,9 @@ import { heroSkills } from "../exports";
   };
 const Intro = () => {
   return (
-    <div className="h-full overflow-hidden ">
+    <div className="h-full overflow-hidden  ">
       <div className="flex  h-[70%]  flex-col gap-4 items-center justify-center ">
-        <span className="md:w-[70%] w-full ">
+        <span className="md:w-[70%]  p-4  mb:mt-8 ">
           <h1 className="text-slate-300 font-mono sm:text-2xl mb-20 text-center text-wrap">
             Hey there! I’m Krishna Zade, a full-stack web developer from India
             with a passion for building solutions that don’t just work – they

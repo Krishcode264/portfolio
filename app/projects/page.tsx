@@ -23,36 +23,39 @@ const Project=({p}:{p:Project})=>{
    });
 
 return (
-  <div className="project relative  md:h-[70%] mx-auto sm:w-[70%] w-[90%] my-auto      hover:cursor-pointer rounded-md p-2 ">
+  <div className="project  font-mono relative   mx-auto sm:w-[70%] w-[90%] my-auto      hover:cursor-pointer rounded-md p-2 ">
     <h4 className="text-xl text-slate-300 mb-2">{p.name}</h4>
- 
-      <Image
-        className=" w-full  rounded-md bg-cover"
-        alt={p.name}
-        src={p.thumbnail}
-      ></Image>
 
-      <div>
-        <div className="flex flex-col h-full justify-between items-end ">
-          <p className="text-slate-300 mb-4">{p.description}</p>
-          <div className="flex gap-2  absolute bottom-2 ">
-            {linksArray.map((l) => {
-              return (
-                <Links type={l.key as linksType} key={l.key} url={l.value as string} />
-              );
-            })}
-          </div>
+    <Image
+      className=" w-full  rounded-md bg-cover"
+      alt={p.name}
+      src={p.thumbnail}
+    ></Image>
+
+    <div>
+      <div className="flex flex-col h-full justify-between items-end ">
+        <p className="text-slate-300 font-mono p-2 ">{p.description}</p>
+        <div className="flex gap-2   bottom-2 ">
+          {linksArray.map((l) => {
+            return (
+              <Links
+                type={l.key as linksType}
+                key={l.key}
+                url={l.value as string}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
- 
+  </div>
 );
 }
 
 
 const Projects = () => {
   return (
-    <div className='flex   overflow-y-auto flex-col md:flex-row gap-4 sm:p-4 px-5 md:w-[80%] lg:w-[70%] h-full items-stretch '>
+    <div className='flex p-4 mt-8  overflow-y-auto flex-col  gap-8 sm:p-4 px-5 md:w-[80%] lg:w-[70%] h-full items-stretch '>
      
 {projects.map((p)=>{
 return (

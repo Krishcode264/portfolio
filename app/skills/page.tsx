@@ -52,7 +52,7 @@ const Skill = ({
 };
 const Skills = () => {
   return (
-    <div className=" h-full md:w-[70%] p-2 flex flex-col  justify-center  gap-4 ">
+    <div className=" mt-12   h-auto  mb:pt-16 sm:pt-1 md:w-[70%] p-2 flex flex-col  justify-center  gap-4 overflow-auto">
       <SkillContainer skills={FrontEndSkills} type="Front End" />
 
       <SkillContainer skills={BackEndSkills} type="Backend " />
