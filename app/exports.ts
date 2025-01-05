@@ -85,9 +85,9 @@ export const DevOpsSkills: SkillArray = [
 
 
 interface ProjectLinks {
-  website: string;
+  website?: string;
   github: string;
-  linkedin: string;
+  youtube?:string
 }
 
 // Define a type for the photos
@@ -114,8 +114,6 @@ const petShop: Project = {
   links: {
     website: "https://fanciful-lily-b388c8.netlify.app/",
     github: "https://github.com/krishcode264/pet-shop",
-    linkedin:
-      "https://www.linkedin.com/posts/krishna-zade-644b47243_webdevelopment-react-firebase-activity-7111898375884582912-iTnM?utm_source=share&utm_medium=member_desktop",
   },
   description:
     "An online pet store where users can browse and purchase pet products. The app allows users to create profiles, browse pet feeds, and manage their pet-related needs.",
@@ -141,7 +139,7 @@ const pizzaShop: Project = {
   links: {
     website: "https://pizzbazaar.netlify.app/",
     github: "https://github.com/Krishcode264/pizz-app-project-react-tilwindcss",
-    linkedin:""
+   
   },
   description:
     "A beginner-level project built using React to demonstrate foundational skills in front-end development and user interface design",
@@ -154,10 +152,8 @@ const socialSphere: Project = {
   thumbnail: thumbnail, // Using the feed image as the thumbnail
   video: "https://youtu.be/JfLvUZNR1N4?si=IbmqbVW0ylu11LKG", // Add a video link if applicable
   links: {
-    website: "https://social-sphere-chi.vercel.app/",
+    youtube: "https://youtu.be/JfLvUZNR1N4?si=F63gQsoMFrfjuRvu",
     github: "https://github.com/Krishcode264/Social-Sphere",
-    linkedin:
-      "https://www.linkedin.com/posts/krishna-zade-644b47243_webdevelopment-fullstack-reactjs-activity-7242039103502856192-yJuo?utm_source=share&utm_medium=member_desktop",
   },
   description:
     "Social Sphere is a social networking platform that enables users to share posts, interact with friends, make audio/video calls, and manage their profile. With a sleek and modern design, Social Sphere creates a seamless social experience.",
