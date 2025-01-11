@@ -47,6 +47,14 @@ import petAuth from "@/public/projects/petshop/auth.png";
 
 //imports for pizza app
 import pizza from "@/public/projects/pizza/pizza.png"
+
+
+
+
+
+//for hfdm
+import adminDashboard from "@/public/projects/hdfm/admin.png"
+
 export  type SkillArray={name:string,logo:string|StaticImageData}[];
 // Frontend Skills
 export const FrontEndSkills: SkillArray = [
@@ -85,7 +93,7 @@ export const DevOpsSkills: SkillArray = [
 
 
 interface ProjectLinks {
-  website?: string;
+  website: string;
   github: string;
   youtube?:string
 }
@@ -152,6 +160,7 @@ const socialSphere: Project = {
   thumbnail: thumbnail, // Using the feed image as the thumbnail
   video: "https://youtu.be/JfLvUZNR1N4?si=IbmqbVW0ylu11LKG", // Add a video link if applicable
   links: {
+    website: "https://socialsphere.krishcode264.online/",
     youtube: "https://youtu.be/JfLvUZNR1N4?si=F63gQsoMFrfjuRvu",
     github: "https://github.com/Krishcode264/Social-Sphere",
   },
@@ -208,5 +217,26 @@ const socialSphere: Project = {
   ],
 };
 
+const hdfm: Project = {
+  name: "Hospital food delivery management system",
+  thumbnail: adminDashboard,
+  video: "https://youtu.be/LezfBtjga5k?si=k7frBPAwbrsDK1iA", // Add a video link if applicable
+  links: {
+    youtube: "https://youtu.be/LezfBtjga5k?si=k7frBPAwbrsDK1iA",
+    github: "https://github.com/Krishcode264/hfdm",
+    website: "https://hfdm-ten.vercel.app/",
+  },
+  description:
+    "Developed a comprehensive delivery management system for a hospital, designed to streamline the coordination of deliveries, optimize routing, and improve overall operational efficiency. The system allowed for real-time tracking, automated scheduling, and enhanced communication between the hospital, delivery personnel, and patients. Utilized modern technologies to ensure a seamless and efficient delivery process, contributing to improved service delivery and patient satisfaction",
+  photos: [
+    {
+      title: "Hospital Manager Dashboard",
+      description:
+        "its an Hospital Manager admin dashboard with list of Patients , Plantry Staff and Orders ",
+      url: adminDashboard,
+    },
+  ],
+};
+
 export const heroSkills:SkillArray=[...FrontEndSkills,...BackEndSkills,...DevOpsSkills]
-export const projects=[socialSphere,petShop,pizzaShop]
+export const projects = [socialSphere, hdfm,petShop, pizzaShop];

@@ -71,10 +71,10 @@ background: linear-gradient(to right, rgba(27, 20, 45, 0.9), rgba(190, 174, 214,
     transform: translateX(-250%);
   }
 }
-.project:hover{
+/* .project:hover{
   transform: scale(1.03);
   transition: transform 0.5s;
-}
+} */
 .main-wrapper {
   background: #250c6307;
   
@@ -165,3 +165,5 @@ background: linear-gradient(to right, rgba(27, 20, 45, 0.9), rgba(190, 174, 214,
       50px 310px 240px 90px rgb(217, 50, 89);
 }
 } */
+
+
