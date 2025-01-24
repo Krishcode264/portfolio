@@ -5,7 +5,7 @@ const Resume = () => {
   return (
     <div className="w-full h-full">
       <embed
-        src="general/r.pdf"
+        src="general/r2.pdf"
        
         className="m-auto "
         
