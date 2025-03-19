@@ -18,9 +18,6 @@ const Nav = () => {
       <Link className={clsx(isActive("/projects"))} href={"/projects"}>
         Projects
       </Link>
-      <Link className={clsx("hidden md:block ",isActive("/resume"))} href={"/resume"}>
-        Resume
-      </Link>
     </div>
   );
 }
