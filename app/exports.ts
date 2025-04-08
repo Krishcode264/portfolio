@@ -48,7 +48,7 @@ import petAuth from "@/public/projects/petshop/auth.png";
 //imports for pizza app
 import pizza from "@/public/projects/pizza/pizza.png"
 
-
+import boldhugFront from "@/public/projects/boldhug/home.png"
 
 
 
@@ -138,6 +138,19 @@ const petShop: Project = {
         "Authentication page where users can sign up or log in to their accounts.",
       url: petAuth, // Image URL for the auth page
     },
+  ],
+};
+const boldHug: Project = {
+  name: "Bold Hug an Event Sharing,Companion finding app",
+  thumbnail: boldhugFront, // Using the front image as the thumbnail
+  links: {
+    website: "https://boldhug-web.vercel.app/",
+    github: "https://github.com/Krishcode264/boldhug-web",
+  },
+  description:
+    "Bold Hug is your go-to app for discovering events and finding companions — whether it's for travel, sports, food, or just hanging out. Create or join events, share photos, and connect with people near you who love doing the same things. Built for real-life connection. Designed for shared experiences.",
+  photos: [
+
   ],
 };
 
@@ -239,4 +252,4 @@ const hdfm: Project = {
 };
 
 export const heroSkills:SkillArray=[...FrontEndSkills,...BackEndSkills,...DevOpsSkills]
-export const projects = [socialSphere, hdfm,petShop, pizzaShop];
+export const projects = [boldHug,socialSphere, hdfm,petShop, pizzaShop];
