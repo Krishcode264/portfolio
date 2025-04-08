@@ -45,7 +45,7 @@ const Project = ({ p }: { p: Project }) => {
       <h4 className="text-xl text-slate-300 mb-2">{p.name}</h4>
 
       <Image
-        className=" w-full  rounded-md bg-cover"
+        className=" w-[95%] mx-auto  rounded-md bg-cover"
         alt={p.name}
         src={p.thumbnail}
       ></Image>

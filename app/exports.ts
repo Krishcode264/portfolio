@@ -9,6 +9,7 @@ import tw from "@/public/frontend/twcss.png";
 import  redux from "@/public/frontend/redux.png";
 import recoil from "@/public/frontend/recoil.png";
 import webrtc from "@/public/frontend/webrtc.png"
+import rn from "@/public/frontend/rn.png"
 
 //backend
 
@@ -64,6 +65,7 @@ export const FrontEndSkills: SkillArray = [
   { name: "TypeScript", logo: ts },
   { name: "React", logo: react },
   { name: "Next.js", logo: nextjs },
+  { name: "React Native", logo: rn },
   { name: "Tailwind CSS", logo: tw },
   { name: "Redux", logo: redux },
   { name: "Recoil", logo: recoil },
