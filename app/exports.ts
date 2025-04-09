@@ -146,7 +146,7 @@ const boldHug: Project = {
   name: "Bold Hug an Event Sharing,Companion finding app",
   thumbnail: boldhugFront, // Using the front image as the thumbnail
   links: {
-    website: "https://boldhug-web.vercel.app/",
+    website: "https://web.boldhug.krishcode264.online/",
     github: "https://github.com/Krishcode264/boldhug-web",
   },
   description:
