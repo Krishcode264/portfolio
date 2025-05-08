@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https:/krishnazade.vercel.app
+
+# Sitemaps
+Sitemap: https:/krishnazade.vercel.app/sitemap.xml
