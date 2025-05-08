@@ -61,6 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta name="google-site-verification" content="7IcqY4aOAe6NCnOzvEaQPkMajGxhkOC8qBV30Zvzvfc" />
       <body className="">
         <div className=" main-wrapper h-[100dvh] w-screen  flex flex-col  ">
           <div className="md:w-[80%] lg:w-[70%] flex-1 w-full mx-auto overflow-y-auto flex justify-center">
