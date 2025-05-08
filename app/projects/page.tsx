@@ -41,18 +41,18 @@ const Project = ({ p }: { p: Project }) => {
   });
 
   return (
-    <div className="project  font-mono relative   mx-auto sm:w-[60%] md:w-[90%] my-auto   w-[90%]   hover:cursor-pointer rounded-md p-2 ">
-      <h4 className="text-xl text-slate-300 mb-2">{p.name}</h4>
+    <div className="project  relative   mx-auto sm:w-[90%] md:w-[90%] my-auto   w-full   hover:cursor-pointer rounded-md p-2 ">
+      <h4 className="text-base md:text-xl  text-slate-300 mb-2">{p.name}</h4>
 
       <Image
-        className=" w-[95%] mx-auto  rounded-md bg-cover"
+        className=" w-[95%]  rounded-md bg-cover"
         alt={p.name}
         src={p.thumbnail}
       ></Image>
 
       <div>
         <div className="flex flex-col h-full justify-between items-end ">
-          <p className="text-slate-300 font-mono p-2 sm:text-lg text-xs ">
+          <p className="text-slate-300 p-2 sm:text-lg text-xs ">
             {p.description}
           </p>
           <div className="flex gap-2   bottom-2 ">
@@ -74,7 +74,7 @@ const Project = ({ p }: { p: Project }) => {
 
 const Projects = () => {
   return (
-    <div className="flex h-full md:-flex-col flex-row p-4 mb-4 md:py-12 flex-wrap gap-4  md:gap-8   ">
+    <div className="flex  overflow-y-auto  md:-flex-col flex-row p-4 mb-4 md:py-12 flex-wrap gap-4  md:gap-8   ">
       {projects.map((p) => {
         return <Project p={p} key={p.name} />;
       })}

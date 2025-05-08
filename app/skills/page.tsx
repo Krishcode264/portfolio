@@ -52,13 +52,15 @@ const Skill = ({
 };
 const Skills = () => {
   return (
-    <div className=" mx-auto p-4  flex flex-col  justify-center  gap-4 overflow-auto">
+    <div className=" flex flex-col flex-1 w-full  my-auto sm:gap-4 max-w-5xl mx-auto px-4 py-6 overflow-y-auto">
+    
       <SkillContainer skills={FrontEndSkills} type="Front End" />
 
-      <SkillContainer skills={BackEndSkills} type="Backend " />
+<SkillContainer skills={BackEndSkills} type="Backend " />
 
-      <SkillContainer skills={DevOpsSkills} type="DevOps" />
-    </div>
+<SkillContainer skills={DevOpsSkills} type="DevOps" />
+      </div>
+
   );
 };
 

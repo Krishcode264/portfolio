@@ -150,7 +150,7 @@ const boldHug: Project = {
     github: "https://github.com/Krishcode264/boldhug-web",
   },
   description:
-    "Bold Hug is your go-to app for discovering events and finding companions — whether it's for travel, sports, food, or just hanging out. Create or join events, share photos, and connect with people near you who love doing the same things. Built for real-life connection. Designed for shared experiences.",
+    "Bold Hug is your go-to app for discovering events and finding companions whether it's for travel, sports, food, or just hanging out. Create or join events, share photos, and connect with people near you who love doing the same things. Built for real-life connection. Designed for shared experiences.",
   photos: [
 
   ],
@@ -242,7 +242,7 @@ const hdfm: Project = {
     website: "https://hfdm-ten.vercel.app/",
   },
   description:
-    "Developed a comprehensive delivery management system for a hospital, designed to streamline the coordination of deliveries, optimize routing, and improve overall operational efficiency. The system allowed for real-time tracking, automated scheduling, and enhanced communication between the hospital, delivery personnel, and patients. Utilized modern technologies to ensure a seamless and efficient delivery process, contributing to improved service delivery and patient satisfaction",
+    "Developed a comprehensive delivery management system for a hospital, designed to streamline the coordination of deliveries, optimize routing, and improve overall operational efficiency. The system allowed for real-time tracking, automated scheduling, and enhanced communication between the hospital, delivery personnel, and patients",
   photos: [
     {
       title: "Hospital Manager Dashboard",
