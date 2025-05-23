@@ -1,6 +1,6 @@
 import React from "react";
 import Image, { type StaticImageData } from "next/image";
-import p1 from "@/public/profile/pic.jpg";
+import p1 from "@/public/profile/pic2.jpg";
 import ln from "@/public/logos/ln2.png";
 import gh from "@/public/logos/gh.png";
 import Link from "next/link";

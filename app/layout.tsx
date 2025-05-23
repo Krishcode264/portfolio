@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Krishna Zade Portfolio",
     images: [
       {
-        url: "https://krishnazade.vercel.app/profile/p.jpg", 
+        url: "https://krishnazade.vercel.app/profile/pic2.jpg", 
         width: 630,
         height: 630,
         alt: "Krishna Zade Portfolio",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description:
       "Visit Krishna Zade’s portfolio and discover his full-stack web development projects and technical skillset.",
     creator: "@yourTwitterHandle", 
-    images: ["https://krishnazade.vercel.app/profile/p.jpg"],
+    images: ["https://krishnazade.vercel.app/profile/pic2.jpg"],
   },
 };
 
