@@ -39,13 +39,13 @@ const Intro = () => {
         </span>
 
         <Image
-          width={12}
-          height={12}
-          className="w-28 h-28 rounded-full"
+          width={112}
+          height={112}
+          className="w-28 h-28 rounded-full object-cover"
           alt="photo"
           src={p1}
           unoptimized
-        ></Image>
+        />
 
         <div className="flex items-center gap-2">
           <Link
