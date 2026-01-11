@@ -146,7 +146,7 @@ const boldHug: Project = {
   name: "Bold Hug an Event Sharing,Companion finding app",
   thumbnail: boldhugFront, // Using the front image as the thumbnail
   links: {
-    website: "https://web.boldhug.krishcode264.online/",
+    website: "https://bh-web-dun.vercel.app/",
     github: "https://github.com/Krishcode264/boldhug-web",
   },
   description:
@@ -175,7 +175,7 @@ const socialSphere: Project = {
   thumbnail: thumbnail, // Using the feed image as the thumbnail
   video: "https://youtu.be/JfLvUZNR1N4?si=IbmqbVW0ylu11LKG", // Add a video link if applicable
   links: {
-    website: "https://socialsphere.krishcode264.online/",
+    website: "https://social-sphere-krishcode264s-projects.vercel.app/",
     youtube: "https://youtu.be/JfLvUZNR1N4?si=F63gQsoMFrfjuRvu",
     github: "https://github.com/Krishcode264/Social-Sphere",
   },
