@@ -143,14 +143,14 @@ const petShop: Project = {
   ],
 };
 const boldHug: Project = {
-  name: "Bold Hug an Event Sharing,Companion finding app",
+  name: "Rallyo an Event Sharing,Companion finding app",
   thumbnail: boldhugFront, // Using the front image as the thumbnail
   links: {
-    website: "https://bh-web-dun.vercel.app/",
+    website: "https://web.rallyo.online/",
     github: "https://github.com/Krishcode264/boldhug-web",
   },
   description:
-    "Bold Hug is your go-to app for discovering events and finding companions whether it's for travel, sports, food, or just hanging out. Create or join events, share photos, and connect with people near you who love doing the same things. Built for real-life connection. Designed for shared experiences.",
+    "Rallyo is your go-to app for discovering events and finding companions whether it's for travel, sports, food, or just hanging out. Create or join events, share photos, and connect with people near you who love doing the same things. Built for real-life connection. Designed for shared experiences.",
   photos: [
 
   ],
