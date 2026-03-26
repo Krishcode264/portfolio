@@ -15,11 +15,11 @@ const Contact = () => {
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
           <h3 className="text-3xl md:text-5xl font-mono font-bold text-white mb-6 tracking-tight">
-            Let's build something <span className="text-pink-400">extraordinary.</span>
+            Let&apos;s build something <span className="text-pink-400">extraordinary.</span>
           </h3>
           
           <p className="text-slate-400 font-mono text-sm md:text-lg mb-12 max-w-2xl mx-auto leading-relaxed text-wrap">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. 
+            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision. 
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
