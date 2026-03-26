@@ -56,6 +56,13 @@ import boldhugFront from "@/public/projects/boldhug/home.png"
 //for hfdm
 import adminDashboard from "@/public/projects/hdfm/admin.png"
 
+//for swe-agent
+import arch from "@/public/projects/swe-agent/architecture.png"
+import dash from "@/public/projects/swe-agent/dashboard.png"
+
+//for tourist-safety
+import safetyDash from "@/public/projects/tourist-safety/dashboard.png"
+
 export  type SkillArray={name:string,logo:string|StaticImageData}[];
 // Frontend Skills
 export const FrontEndSkills: SkillArray = [
@@ -115,6 +122,7 @@ export interface Project {
   video?: string;
   description: string;
   photos: ProjectPhoto[];
+  tech: string[];
 }
 
 
@@ -141,6 +149,7 @@ const petShop: Project = {
       url: petAuth, // Image URL for the auth page
     },
   ],
+  tech: ["React", "JavaScript", "Tailwind CSS", "Netlify"],
 };
 const boldHug: Project = {
   name: "Rallyo an Event Sharing,Companion finding app",
@@ -153,6 +162,17 @@ const boldHug: Project = {
     "Rallyo is your go-to app for discovering events and finding companions whether it's for travel, sports, food, or just hanging out. Create or join events, share photos, and connect with people near you who love doing the same things. Built for real-life connection. Designed for shared experiences.",
   photos: [
 
+  ],
+  tech: [
+    "React Native",
+    "Expo",
+    "Redis",
+    "NativeWind",
+    "Node",
+    "Google FCM",
+    "Postgres",
+    "Prisma",
+    "Socket.io",
   ],
 };
 
@@ -169,6 +189,7 @@ const pizzaShop: Project = {
   photos: [
    
   ],
+  tech: ["React", "Tailwind CSS", "Vite", "JavaScript"],
 };
 const socialSphere: Project = {
   name: "Social Sphere",
@@ -230,6 +251,7 @@ const socialSphere: Project = {
       url: userprofile, // User profile page image
     },
   ],
+  tech: ["S3", "Node", "Next JS", "Tailwind", "Web RTC", "Redis", "Socket.io"],
 };
 
 const hdfm: Project = {
@@ -251,7 +273,71 @@ const hdfm: Project = {
       url: adminDashboard,
     },
   ],
+  tech: ["React", "Node.js", "Express", "MongoDB", "Chart.js"],
+};
+
+const sweAgent: Project = {
+  name: "SWE-Agent (AI Incident Resolver)",
+  thumbnail: dash,
+  video: "https://youtu.be/W84wCfQ0auQ",
+  links: {
+    website: "https://swe-agent-pkhe.vercel.app/",
+    github: "https://github.com/Krishcode264/swe-agent",
+    youtube: "https://youtu.be/W84wCfQ0auQ",
+  },
+  description:
+    "An end-to-end platform designed to automatically detect, analyze, and resolve software incidents. By combining GitHub webhooks, AI-driven reasoning, and Docker-based sandboxed execution, the system completes the full loop from issue creation to Pull Request submission.",
+  photos: [
+    {
+      title: "System Architecture",
+      description: "Distributed architecture featuring a Node.js orchestrator and Python-based AI workers.",
+      url: arch,
+    },
+    {
+      title: "Agent Dashboard",
+      description: "Real-time incident tracking and agent timeline visualization.",
+      url: dash,
+    },
+  ],
+  tech: ["Node.js", "TypeScript", "Python", "Redis", "MongoDB", "Docker", "React", "LangGraph", "GitHub API"],
+};
+
+const touristSafety: Project = {
+  name: "Smart Tourist Safety & Incident Response",
+  thumbnail: safetyDash,
+  links: {
+    website: "https://tourist-safety-monitoring-system.vercel.app/",
+    github: "https://github.com/Krishcode264/Tourist-Safety-Monitoring-system",
+  },
+  description:
+    "A technology-driven platform designed to ensure real-time safety, monitoring, and rapid incident response for tourists. Features include Digital ID issuance, geo-fencing logic, SOS panic buttons, and real-time police coordination.",
+  photos: [
+    {
+      title: "Geospatial Monitoring Dashboard",
+      description: "Real-time tracking of tourists and active incidents with interactive geo-fences.",
+      url: safetyDash,
+    },
+  ],
+  tech: [
+    "React Native",
+    "Expo",
+    "Node.js",
+    "TypeScript",
+    "NestJS",
+    "PostgreSQL",
+    "Redis",
+    "Socket.IO",
+    "NativeWind",
+  ],
 };
 
 export const heroSkills:SkillArray=[...FrontEndSkills,...BackEndSkills,...DevOpsSkills]
-export const projects = [boldHug,socialSphere, hdfm,petShop, pizzaShop];
+export const projects = [
+  boldHug, 
+  socialSphere, 
+  sweAgent,
+  touristSafety,
+  // hdfm, 
+  // petShop, 
+  // pizzaShop
+];
