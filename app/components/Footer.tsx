@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
         
         <div className="text-slate-500 font-mono text-[10px] italic tracking-wide max-w-[250px] text-center md:text-right leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
-          "First, solve the problem. Then, write the code."
+          &quot;First, solve the problem. Then, write the code.&quot;
           <span className="block not-italic text-[8px] mt-1 text-slate-600">— John Johnson</span>
         </div>
       </div>

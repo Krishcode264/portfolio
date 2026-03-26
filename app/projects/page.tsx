@@ -110,9 +110,11 @@ const Projects = () => {
           <X size={18} />
         </button>
         <div className="flex-shrink-0 bg-white/5 p-2 rounded-xl">
-          <img
+          <Image
             src="/general/cat.svg"
             alt="Cat"
+            width={64}
+            height={64}
             className="w-16 h-16 object-contain"
           />
         </div>

@@ -126,7 +126,7 @@ export interface Project {
 }
 
 
-const petShop: Project = {
+export const petShop: Project = {
   name: "Pet Shop",
   thumbnail: front, // Using the front image as the thumbnail
   links: {
@@ -176,7 +176,7 @@ const boldHug: Project = {
   ],
 };
 
-const pizzaShop: Project = {
+export const pizzaShop: Project = {
   name: "Pizza Shop Front-End Application",
   thumbnail: pizza, // Using the front image as the thumbnail
   links: {
@@ -254,7 +254,7 @@ const socialSphere: Project = {
   tech: ["S3", "Node", "Next JS", "Tailwind", "Web RTC", "Redis", "Socket.io"],
 };
 
-const hdfm: Project = {
+export const hdfm: Project = {
   name: "Hospital food delivery management system",
   thumbnail: adminDashboard,
   video: "https://youtu.be/LezfBtjga5k?si=k7frBPAwbrsDK1iA", // Add a video link if applicable
