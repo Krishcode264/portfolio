@@ -2,6 +2,9 @@ import React from "react";
 import SectionHeader from "./SectionHeader";
 import { Linkedin, Github, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import lc from "@/public/logos/lc.svg";
+
 
 const Contact = () => {
   return (
@@ -46,6 +49,13 @@ const Contact = () => {
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-slate-800 hover:border-slate-800 hover:scale-110 transition-all duration-300"
               >
                 <Github size={22} />
+              </Link>
+              <Link
+                href="https://leetcode.com/u/Krishcode264/"
+                target="_blank"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-[#FFA116]/20 hover:border-[#FFA116] hover:scale-110 transition-all duration-300"
+              >
+                <Image src={lc} alt="leetcode" className="w-6 h-6" />
               </Link>
             </div>
           </div>

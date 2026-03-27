@@ -4,6 +4,8 @@ import p1 from "@/public/profile/pic_new.jpg";
 import ln from "@/public/logos/ln2.png";
 import gh from "@/public/logos/gh.png";
 import Link from "next/link";
+import lc from "@/public/logos/lc.svg";
+
 import { heroSkills } from "../exports";
 const HeroSkill = ({
   logo,
@@ -60,7 +62,14 @@ const Intro = () => {
             <Image
               src={gh}
               className="w-6 h-6  bg-slate-300  rounded-full"
-              alt="ln logo  "
+              alt="gh logo  "
+            ></Image>
+          </Link>
+          <Link href={"https://leetcode.com/u/Krishcode264/"} target="_blank">
+            <Image
+              src={lc}
+              className="w-6 h-6 p-1 bg-slate-900 rounded-full border border-white/10"
+              alt="lc logo"
             ></Image>
           </Link>
         </div>
