@@ -8,7 +8,6 @@ import { projects, type Project } from "../exports";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Github, ExternalLink, Youtube, X } from "lucide-react";
-import ProjectCardPremium from "../components/ProjectCardPremium";
 
 export type linksType = "website" | "github" | "youtube";
 
