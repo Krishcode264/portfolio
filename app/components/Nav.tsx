@@ -35,9 +35,9 @@ const Nav = () => {
 
   return (
     <div className="nav sticky z-50 transition-all duration-300
-      md:top-6 md:w-[75%] md:mx-auto md:h-16 md:bg-white/10 md:backdrop-blur-2xl md:border md:border-white/20 md:rounded-full
+      md:top-6 md:w-fit md:px-12 md:mx-auto md:h-16 md:bg-white/10 md:backdrop-blur-2xl md:border md:border-white/20 md:rounded-full
       bottom-0 w-full h-[10%] bg-slate-950/90 backdrop-blur-xl border-t border-white/10
-      flex items-center justify-evenly md:justify-center md:gap-24 
+      flex items-center justify-evenly md:justify-center md:gap-12 
       text-slate-200 sm:font-bold font-mono md:text-xl shadow-xl">
       <Link className={clsx("hover:text-pink-500 transition-colors", isActive("intro"))} href={"#intro"}>
         Intro

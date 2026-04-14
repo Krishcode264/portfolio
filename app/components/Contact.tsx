@@ -62,8 +62,8 @@ const Contact = () => {
           </div>
 
           <div className="border-t border-white/10 pt-12">
-            <h4 className="text-xl md:text-2xl font-mono font-bold text-white mb-2">Send Suggestions</h4>
-            <p className="text-slate-500 font-mono text-sm mb-8">Your feedback helps me improve this digital experience.</p>
+            <h4 className="text-xl md:text-2xl font-mono font-bold text-white mb-2">Send a Message or Suggestion</h4>
+            <p className="text-slate-500 font-mono text-sm mb-8">Got a project in mind or a way to improve this site? I&apos;d love to hear from you.</p>
             <ContactForm />
           </div>
         </div>
