@@ -18,8 +18,7 @@ const Footer = () => {
         
         <div className="flex items-center gap-2 text-slate-400 font-mono text-sm">
           <span>Made with</span>
-          <Heart size={16} className="text-pink-500 fill-pink-500 animate-pulse" />
-          <span>in India</span>
+          <Heart size={16} className="text-pink-500 fill-pink-500 animate-pulse" /> <span>and llm </span>
         </div>
         
         <div className="text-slate-500 font-mono text-[10px] italic tracking-wide max-w-[250px] text-center md:text-right leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">

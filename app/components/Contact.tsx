@@ -4,6 +4,7 @@ import { Linkedin, Github, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import lc from "@/public/logos/lc.svg";
+import ContactForm from "./ContactForm";
 
 
 const Contact = () => {
@@ -25,7 +26,7 @@ const Contact = () => {
             I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision. 
           </p>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
             <Link
               href="mailto:krishnazade99@gmail.com"
               className="flex items-center gap-3 px-8 py-4 bg-pink-500 hover:bg-pink-600 text-white rounded-full font-mono font-bold transition-all duration-300 shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:shadow-[0_0_30px_rgba(236,72,153,0.5)] hover:scale-105 group/btn"
@@ -58,6 +59,12 @@ const Contact = () => {
                 <Image src={lc} alt="leetcode" className="w-6 h-6" />
               </Link>
             </div>
+          </div>
+
+          <div className="border-t border-white/10 pt-12">
+            <h4 className="text-xl md:text-2xl font-mono font-bold text-white mb-2">Send Suggestions</h4>
+            <p className="text-slate-500 font-mono text-sm mb-8">Your feedback helps me improve this digital experience.</p>
+            <ContactForm />
           </div>
         </div>
       </div>

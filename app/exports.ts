@@ -59,9 +59,23 @@ import adminDashboard from "@/public/projects/hdfm/admin.png"
 //for swe-agent
 import arch from "@/public/projects/swe-agent/architecture.png"
 import dash from "@/public/projects/swe-agent/dashboard.png"
+import sweAgentNew from "@/public/projects/swe-agent/ChatGPT Image Apr 14, 2026, 08_48_54 PM.png"
 
 //for tourist-safety
 import safetyDash from "@/public/projects/tourist-safety/dashboard.png"
+
+//for StudyMap
+import studyMapLanding from "@/public/projects/studyMap/landingpage.png";
+import studyMapMobile from "@/public/projects/studyMap/mobilescreen.png";
+
+//for AutoFill Pro
+import autoFillProImg from "@/public/projects/autofill-pro/image.png";
+
+//for DSA Prep
+import dsaPrepImg from "@/public/projects/company-wise-dsa-practise/image.png";
+
+//for llm-client
+import llmClientImg from "@/public/projects/llm-client/llm-client v2.0 infographic overview.png";
 
 export  type SkillArray={name:string,logo:string|StaticImageData}[];
 // Frontend Skills
@@ -278,7 +292,7 @@ export const hdfm: Project = {
 
 const sweAgent: Project = {
   name: "SWE-Agent (AI Incident Resolver)",
-  thumbnail: dash,
+  thumbnail: sweAgentNew,
   video: "https://youtu.be/W84wCfQ0auQ",
   links: {
     website: "https://swe-agent-pkhe.vercel.app/",
@@ -288,6 +302,11 @@ const sweAgent: Project = {
   description:
     "An end-to-end platform designed to automatically detect, analyze, and resolve software incidents. By combining GitHub webhooks, AI-driven reasoning, and Docker-based sandboxed execution, the system completes the full loop from issue creation to Pull Request submission.",
   photos: [
+    {
+      title: "AI Reasoning Interface",
+      description: "High-fidelity visualization of the SWE-Agent intelligence and incident resolution flow.",
+      url: sweAgentNew,
+    },
     {
       title: "System Architecture",
       description: "Distributed architecture featuring a Node.js orchestrator and Python-based AI workers.",
@@ -331,9 +350,95 @@ const touristSafety: Project = {
   ],
 };
 
+export const studyMap: Project = {
+  name: "StudyMap — Master Your Path, Execute Your Journey",
+  thumbnail: studyMapLanding,
+  links: {
+    website: "https://study-map-sigma.vercel.app/",
+    github: "https://github.com/Krishcode264/focus-task",
+  },
+  description:
+    "StudyMap is an AI-powered personal roadmap and productivity manager for Android. It bridges the gap between ambitious long-term goals and daily execution by turning high-level roadmaps into actionable daily tasks.",
+  photos: [
+    {
+      title: "Mobile Interface",
+      description: "Clean and intuitive mobile interface for managing your daily roadmap tasks.",
+      url: studyMapMobile,
+    },
+    {
+      title: "Landing Page",
+      description: "The official landing page for StudyMap, showcasing its features and value proposition.",
+      url: studyMapLanding,
+    },
+  ],
+  tech: ["Expo", "React Native", "NativeWind", "Supabase", "Lucide React Native", "AsyncStorage"],
+};
+
+export const autoFillPro: Project = {
+  name: "AutoFill Pro (AI-Powered Job Application Autofiller)",
+  thumbnail: autoFillProImg,
+  links: {
+    website: "https://autofill-pro.vercel.app/",
+    github: "https://github.com/Krishcode264/autofill-pro",
+  },
+  description:
+    "AutoFill Pro is a powerful, local-first Chrome extension that magically autofills lengthy job applications and integrates with the Gemini API to custom-tailor cover letters and open-ended questions.",
+  photos: [
+    {
+      title: "Extension Interface",
+      description: "Sleek Tailwind-powered UI for managing your profile and initiating auto-fills.",
+      url: autoFillProImg,
+    },
+  ],
+  tech: ["Vite React", "Chrome Extension MV3", "TailwindCSS", "LLM"],
+};
+
+export const dsaPrep: Project = {
+  name: "DSA Prep (Company-wise DSA Interview Preparation)",
+  thumbnail: dsaPrepImg,
+  links: {
+    website: "https://company-wise-dsa-prep.vercel.app/",
+    github: "https://github.com/Krishcode264/dsa-prep",
+  },
+  description:
+    "DSA Prep is a specialized analytics platform for software engineers. It covers 1,700+ problems from 450+ companies, meticulously sorted by question frequency. Features weekly updated FAANG intel, precision progress metrics, and advanced surgical filtering to optimize your preparation.",
+  photos: [
+    {
+      title: "Problem Dashboard",
+      description: "Comprehensive list of problems sorted by frequency and company requirements.",
+      url: dsaPrepImg,
+    },
+  ],
+  tech: ["Next.js", "TypeScript", "TailwindCSS", "PostgreSQL", "Prisma"],
+};
+
+export const llmClient: Project = {
+  name: "llm-client (Free LLM Browser API)",
+  thumbnail: llmClientImg,
+  links: {
+    github: "https://github.com/Krishcode264/llm-client",
+    website: "https://github.com/Krishcode264/llm-client",
+  },
+  description:
+    "A high-performance Node.js service that transforms browser sessions (ChatGPT, Claude, Gemini) into a structured JSON API. It features smart load balancing, stealth automation to bypass detection, and a self-correction pipeline for reliable AI outputs—all without the cost of API keys.",
+  photos: [
+    {
+      title: "Infographic Overview",
+      description: "Complete architectural breakdown of the llm-client v2.0 pipeline and feature set.",
+      url: llmClientImg,
+    },
+  ],
+  tech: ["Node.js", "Playwright", "Zod", "Automation", "LLM Orchestration"],
+};
+
 export const heroSkills:SkillArray=[...FrontEndSkills,...BackEndSkills,...DevOpsSkills]
 export const projects = [
   boldHug, 
+  studyMap,
+  dsaPrep,
+  autoFillPro,
+  llmClient,
+
   socialSphere, 
   sweAgent,
   touristSafety,
