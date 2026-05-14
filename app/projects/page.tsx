@@ -38,12 +38,23 @@ const Project = ({ p }: { p: Project }) => {
     <div className="bg-[#1e2235]/40 backdrop-blur-md border border-white/5 rounded-[2.5rem] overflow-hidden p-6 md:p-10 mb-12 hover:border-white/10 transition-all duration-500 group flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
       {/* Thumbnail Container */}
       <div className="w-full lg:w-1/2 relative overflow-hidden rounded-[1.5rem] shadow-2xl group-hover:scale-[1.02] transition-all duration-500 border border-white/5 hover:border-white/10 self-start lg:self-center aspect-video">
-        <Image
-          className="w-full h-full object-cover object-top block transition-transform duration-700 ease-out group-hover:scale-105"
-          alt={p.name}
-          src={p.thumbnail}
-          unoptimized={true}
-        />
+        {typeof p.thumbnail === 'string' && p.thumbnail.endsWith('.mp4') ? (
+          <video
+            className="w-full h-full object-cover object-top block transition-transform duration-700 ease-out group-hover:scale-105"
+            src={p.thumbnail}
+            autoPlay
+            loop
+            controls
+            playsInline
+          />
+        ) : (
+          <Image
+            className="w-full h-full object-cover object-top block transition-transform duration-700 ease-out group-hover:scale-105"
+            alt={p.name}
+            src={p.thumbnail}
+            unoptimized={true}
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
       </div>
 

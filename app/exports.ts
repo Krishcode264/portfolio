@@ -431,9 +431,29 @@ export const llmClient: Project = {
   tech: ["Node.js", "Playwright", "Zod", "Automation", "LLM Orchestration"],
 };
 
+export const blenderMcpAgent: Project = {
+  name: "Blender MCP Agent",
+  thumbnail: "/projects/blender-mcp/final.mp4",
+  links: {
+    website: "https://github.com/Krishcode264/blender_mcp_agent",
+    github: "https://github.com/Krishcode264/blender_mcp_agent",
+  },
+  description:
+    "An AI-powered agent system that lets you control Blender through natural language. Send a prompt like \"Create a bouncing cube\" and watch Blender execute it — with real-time streaming feedback and live previews.",
+  photos: [
+    {
+      title: "Agent Demo",
+      description: "Real-time AI controlling Blender scene generation.",
+      url: "/projects/blender-mcp/final.mp4",
+    },
+  ],
+  tech: ["FastAPI", "Python", "Next.js", "Blender Python (bpy)", "MCP", "LLM Intent Routing", "Semantic Scene Graph (SSG)", "Spatial Resolution", "NVIDIA NIM"],
+};
+
 export const heroSkills:SkillArray=[...FrontEndSkills,...BackEndSkills,...DevOpsSkills]
 export const projects = [
   boldHug, 
+  blenderMcpAgent,
   studyMap,
   dsaPrep,
   autoFillPro,
