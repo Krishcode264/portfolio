@@ -455,12 +455,13 @@ export const projects = [
   boldHug, 
   blenderMcpAgent,
   studyMap,
-  dsaPrep,
+  socialSphere, 
   autoFillPro,
+  sweAgent,
+  dsaPrep,
   llmClient,
 
-  socialSphere, 
-  sweAgent,
+
   touristSafety,
   // hdfm, 
   // petShop, 
