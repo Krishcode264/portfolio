@@ -30,7 +30,7 @@ const Links = ({ type, url }: { url: string; type: linksType }) => {
   );
 };
 
-const ProjectItem = ({ p, index }: { p: Project; index: number }) => {
+const ProjectItem = ({ p }: { p: Project }) => {
   const [expanded, setExpanded] = useState(false);
   const linksArray = Object.entries(p.links).map(([key, value]) => {
     return { key, value };
@@ -204,8 +204,8 @@ const Projects = () => {
 
       {/* Projects List */}
       <div className="flex flex-col gap-12 snap-y snap-proximity">
-        {projects.map((p, index) => (
-          <ProjectItem p={p} index={index} key={p.name} />
+        {projects.map((p) => (
+          <ProjectItem p={p} key={p.name} />
         ))}
       </div>
     </div>
