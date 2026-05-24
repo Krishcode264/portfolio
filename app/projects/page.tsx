@@ -8,6 +8,7 @@ import { projects, type Project } from "../exports";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Github, ExternalLink, Youtube, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 export type linksType = "website" | "github" | "youtube";
 
@@ -29,22 +30,30 @@ const Links = ({ type, url }: { url: string; type: linksType }) => {
   );
 };
 
-const Project = ({ p }: { p: Project }) => {
+const ProjectItem = ({ p, index }: { p: Project; index: number }) => {
+  const [expanded, setExpanded] = useState(false);
   const linksArray = Object.entries(p.links).map(([key, value]) => {
     return { key, value };
   });
 
   return (
-    <div className="bg-[#1e2235]/40 backdrop-blur-md border border-white/5 rounded-[2.5rem] overflow-hidden p-6 md:p-10 mb-12 hover:border-white/10 transition-all duration-500 group flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      whileHover={{ scale: 0.99 }}
+      className="snap-start relative bg-[#1e2235]/40 backdrop-blur-md border border-white/5 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden p-6 md:p-10 mb-8 hover:border-white/10 transition-colors duration-500 group flex flex-col lg:flex-row gap-6 lg:gap-10 items-center min-h-[75vh] md:min-h-[60vh] max-h-[90vh] md:max-h-none justify-center scroll-mt-24"
+    >
       {/* Thumbnail Container */}
-      <div className="w-full lg:w-1/2 relative overflow-hidden rounded-[1.5rem] shadow-2xl group-hover:scale-[1.02] transition-all duration-500 border border-white/5 hover:border-white/10 self-start lg:self-center aspect-video">
+      <div className="w-full lg:w-[45%] relative overflow-hidden rounded-[1.5rem] shadow-2xl group-hover:scale-[1.02] transition-all duration-500 border border-white/5 hover:border-white/10 self-start lg:self-center aspect-video shrink-0 max-h-[35vh] md:max-h-[50vh]">
         {typeof p.thumbnail === 'string' && p.thumbnail.endsWith('.mp4') ? (
           <video
             className="w-full h-full object-cover object-top block transition-transform duration-700 ease-out group-hover:scale-105"
             src={p.thumbnail}
             autoPlay
             loop
-            controls
+            muted
             playsInline
           />
         ) : (
@@ -59,27 +68,71 @@ const Project = ({ p }: { p: Project }) => {
       </div>
 
       {/* Content Container */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center">
-        <h4 className="text-2xl md:text-3xl font-mono font-bold text-white mb-4 tracking-tight">
-          {p.name}
-        </h4>
-        <p className="text-slate-300 font-mono text-sm md:text-base leading-relaxed mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
-          {p.description}
-        </p>
-
-        {/* Tech Stack Tags */}
-        <div className="flex flex-wrap gap-2 mb-8">
-          {p.tech.map((t) => (
-            <span
-              key={t}
-              className="px-3 py-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-pink-400 opacity-80 group-hover:opacity-100 transition-opacity whitespace-nowrap"
-            >
-              {t}
-            </span>
-          ))}
+      <div className="w-full lg:w-[55%] flex flex-col justify-center max-h-[45vh] lg:max-h-none overflow-y-auto pr-2 no-scrollbar">
+        <motion.h4 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-xl md:text-3xl font-mono font-bold text-white mb-3 md:mb-4 tracking-tight whitespace-pre-wrap"
+        >
+          {p.name.includes(" - ") ? (
+            <>
+              <span className="block">{p.name.split(" - ")[0]}</span>
+              <span className="block text-lg md:text-2xl text-slate-400 mt-1">{p.name.split(" - ")[1]}</span>
+            </>
+          ) : (
+            p.name
+          )}
+        </motion.h4>
+        
+        <div className="relative mb-6">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className={`text-slate-300 font-mono text-xs md:text-sm leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity ${expanded ? '' : 'line-clamp-3 md:line-clamp-none'}`}
+          >
+            {p.description}
+          </motion.p>
+          <button 
+            onClick={() => setExpanded(!expanded)} 
+            className="md:hidden text-pink-400 text-xs mt-2 font-mono hover:underline focus:outline-none"
+          >
+            {expanded ? "Show less" : "Read more"}
+          </button>
         </div>
 
-        <div className="flex gap-4 items-center">
+        {/* Tech Stack Tags */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.05, delayChildren: 0.4 } }
+          }}
+          className="flex flex-wrap gap-2 mb-6 md:mb-8"
+        >
+          {p.tech.map((t) => (
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              key={t}
+              className="px-2.5 py-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-pink-400 opacity-80 group-hover:opacity-100 transition-opacity whitespace-nowrap"
+            >
+              {t}
+            </motion.span>
+          ))}
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="flex gap-4 items-center"
+        >
           {linksArray.map((l) => (
             <Links
               type={l.key as linksType}
@@ -87,9 +140,9 @@ const Project = ({ p }: { p: Project }) => {
               url={l.value as string}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -135,10 +188,24 @@ const Projects = () => {
         </div>
       </div>
 
+      {/* Global Style for scroll snapping on the document body */}
+      <style dangerouslySetInnerHTML={{__html: `
+        html, body {
+          scroll-snap-type: y proximity;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}} />
+
       {/* Projects List */}
-      <div className="grid grid-cols-1 gap-12">
-        {projects.map((p) => (
-          <Project p={p} key={p.name} />
+      <div className="flex flex-col gap-12 snap-y snap-proximity">
+        {projects.map((p, index) => (
+          <ProjectItem p={p} index={index} key={p.name} />
         ))}
       </div>
     </div>

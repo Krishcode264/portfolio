@@ -291,7 +291,7 @@ export const hdfm: Project = {
 };
 
 const sweAgent: Project = {
-  name: "SWE-Agent (AI Incident Resolver)",
+  name: "SWE-Agent - AI Incident Resolver",
   thumbnail: sweAgentNew,
   video: "https://youtu.be/W84wCfQ0auQ",
   links: {
@@ -375,7 +375,7 @@ export const studyMap: Project = {
 };
 
 export const autoFillPro: Project = {
-  name: "AutoFill Pro (AI-Powered Job Application Autofiller)",
+  name: "AutoFill Pro - AI Job Application Autofiller",
   thumbnail: autoFillProImg,
   links: {
     website: "https://autofill-pro.vercel.app/",
@@ -394,7 +394,7 @@ export const autoFillPro: Project = {
 };
 
 export const dsaPrep: Project = {
-  name: "DSA Prep (Company-wise DSA Interview Preparation)",
+  name: "DSA Prep - Company-wise DSA Interview Preparation",
   thumbnail: dsaPrepImg,
   links: {
     website: "https://company-wise-dsa-prep.vercel.app/",
@@ -413,7 +413,7 @@ export const dsaPrep: Project = {
 };
 
 export const llmClient: Project = {
-  name: "llm-client (Free LLM Browser API)",
+  name: "llm-client - Free LLM Browser API",
   thumbnail: llmClientImg,
   links: {
     github: "https://github.com/Krishcode264/llm-client",
