@@ -68,12 +68,12 @@ const ProjectItem = ({ p }: { p: Project }) => {
       </div>
 
       {/* Content Container */}
-      <div className="w-full lg:w-[55%] flex flex-col justify-center max-h-[45vh] lg:max-h-none overflow-y-auto pr-2 no-scrollbar">
+      <div className="w-full lg:w-[55%] flex flex-col justify-center max-h-[45vh] lg:max-h-none pr-2">
         <motion.h4 
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-xl md:text-3xl font-mono font-bold text-white mb-3 md:mb-4 tracking-tight whitespace-pre-wrap"
+          className="text-xl md:text-3xl font-mono font-bold text-white mb-3 md:mb-4 tracking-tight whitespace-pre-wrap shrink-0"
         >
           {p.name.includes(" - ") ? (
             <>
@@ -85,62 +85,64 @@ const ProjectItem = ({ p }: { p: Project }) => {
           )}
         </motion.h4>
         
-        <div className="relative mb-6">
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className={`text-slate-300 font-mono text-xs md:text-sm leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity ${expanded ? '' : 'line-clamp-3 md:line-clamp-none'}`}
-          >
-            {p.description}
-          </motion.p>
-          <button 
-            onClick={() => setExpanded(!expanded)} 
-            className="md:hidden text-pink-400 text-xs mt-2 font-mono hover:underline focus:outline-none"
-          >
-            {expanded ? "Show less" : "Read more"}
-          </button>
-        </div>
-
-        {/* Tech Stack Tags */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.05, delayChildren: 0.4 } }
-          }}
-          className="flex flex-wrap gap-2 mb-6 md:mb-8"
-        >
-          {p.tech.map((t) => (
-            <motion.span
-              variants={{
-                hidden: { opacity: 0, y: 10 },
-                visible: { opacity: 1, y: 0 }
-              }}
-              key={t}
-              className="px-2.5 py-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-pink-400 opacity-80 group-hover:opacity-100 transition-opacity whitespace-nowrap"
+        <div className="overflow-y-auto no-scrollbar min-h-0 pb-2 flex-1">
+          <div className="relative mb-6">
+            <motion.p 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className={`text-slate-300 font-mono text-xs md:text-sm leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity ${expanded ? '' : 'line-clamp-3 md:line-clamp-none'}`}
             >
-              {t}
-            </motion.span>
-          ))}
-        </motion.div>
+              {p.description}
+            </motion.p>
+            <button 
+              onClick={() => setExpanded(!expanded)} 
+              className="md:hidden text-pink-400 text-xs mt-2 font-mono hover:underline focus:outline-none"
+            >
+              {expanded ? "Show less" : "Read more"}
+            </button>
+          </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="flex gap-4 items-center"
-        >
-          {linksArray.map((l) => (
-            <Links
-              type={l.key as linksType}
-              key={l.key}
-              url={l.value as string}
-            />
-          ))}
-        </motion.div>
+          {/* Tech Stack Tags */}
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.05, delayChildren: 0.4 } }
+            }}
+            className="flex flex-wrap gap-2 mb-6 md:mb-8"
+          >
+            {p.tech.map((t) => (
+              <motion.span
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                key={t}
+                className="px-2.5 py-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-pink-400 opacity-80 group-hover:opacity-100 transition-opacity whitespace-nowrap"
+              >
+                {t}
+              </motion.span>
+            ))}
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="flex gap-4 items-center shrink-0"
+          >
+            {linksArray.map((l) => (
+              <Links
+                type={l.key as linksType}
+                key={l.key}
+                url={l.value as string}
+              />
+            ))}
+          </motion.div>
+        </div>
       </div>
     </motion.div>
   );

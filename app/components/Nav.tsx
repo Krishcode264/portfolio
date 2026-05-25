@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import Link from 'next/link';
 import clsx from "clsx"
 
 const Nav = () => {
@@ -9,8 +8,11 @@ const Nav = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
+      // This creates a 20% detection zone in the middle of the screen.
+      // Any section passing through this zone will be marked as active,
+      // perfectly handling sections of ANY height (like the tall projects section).
+      rootMargin: '-40% 0px -40% 0px',
+      threshold: 0,
     };
 
     const handleIntersect = (entries: IntersectionObserverEntry[]) => {
@@ -31,6 +33,17 @@ const Nav = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      // Smooth scroll to the section
+      element.scrollIntoView({ behavior: 'smooth' });
+      // Optionally update the URL hash
+      window.history.pushState(null, "", `#${id}`);
+    }
+  };
+
   const isActive = (id: string) => activeSection === id ? "active-nav-item" : "";
 
   return (
@@ -39,18 +52,34 @@ const Nav = () => {
       bottom-0 w-full h-[10%] bg-slate-950/90 backdrop-blur-xl border-t border-white/10
       flex items-center justify-evenly md:justify-center md:gap-12 
       text-slate-200 sm:font-bold font-mono md:text-xl shadow-xl">
-      <Link className={clsx("hover:text-pink-500 transition-colors", isActive("intro"))} href={"#intro"}>
+      <a 
+        onClick={(e) => handleClick(e, 'intro')}
+        className={clsx("hover:text-pink-500 transition-colors cursor-pointer", isActive("intro"))} 
+        href="#intro"
+      >
         Intro
-      </Link>
-      <Link className={clsx("hover:text-pink-500 transition-colors", isActive("skills"))} href={"#skills"}>
+      </a>
+      <a 
+        onClick={(e) => handleClick(e, 'skills')}
+        className={clsx("hover:text-pink-500 transition-colors cursor-pointer", isActive("skills"))} 
+        href="#skills"
+      >
         Skills
-      </Link>
-      <Link className={clsx("hover:text-pink-500 transition-colors", isActive("projects"))} href={"#projects"}>
+      </a>
+      <a 
+        onClick={(e) => handleClick(e, 'projects')}
+        className={clsx("hover:text-pink-500 transition-colors cursor-pointer", isActive("projects"))} 
+        href="#projects"
+      >
         Projects
-      </Link>
-      <Link className={clsx("hover:text-pink-500 transition-colors", isActive("contact"))} href={"#contact"}>
+      </a>
+      <a 
+        onClick={(e) => handleClick(e, 'contact')}
+        className={clsx("hover:text-pink-500 transition-colors cursor-pointer", isActive("contact"))} 
+        href="#contact"
+      >
         Contact
-      </Link>
+      </a>
     </div>
   );
 }
