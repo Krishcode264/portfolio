@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Image, { type StaticImageData } from "next/image";
 import p1 from "@/public/profile/pic_new.jpg";
 import ln from "@/public/logos/ln2.png";
@@ -7,6 +8,73 @@ import Link from "next/link";
 import lc from "@/public/logos/lc.svg";
 
 import { heroSkills } from "../exports";
+
+interface TextSegment {
+  text: string;
+  className?: string;
+}
+
+const SegmentedTypewriter = ({ segments, speed = 25 }: { segments: TextSegment[]; speed?: number }) => {
+  const [visibleSegments, setVisibleSegments] = useState<TextSegment[]>([]);
+  const [activeSegmentIndex, setActiveSegmentIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+
+  useEffect(() => {
+    if (activeSegmentIndex >= segments.length) return;
+
+    const currentSegment = segments[activeSegmentIndex];
+    
+    const timer = setTimeout(() => {
+      if (charIndex < currentSegment.text.length) {
+        setVisibleSegments((prev) => {
+          const updated = [...prev];
+          if (updated[activeSegmentIndex]) {
+            updated[activeSegmentIndex] = {
+              ...updated[activeSegmentIndex],
+              text: currentSegment.text.substring(0, charIndex + 1),
+            };
+          } else {
+            updated.push({
+              ...currentSegment,
+              text: currentSegment.text.charAt(0),
+            });
+          }
+          return updated;
+        });
+        setCharIndex((prev) => prev + 1);
+      } else {
+        setActiveSegmentIndex((prev) => prev + 1);
+        setCharIndex(0);
+      }
+    }, speed);
+
+    return () => clearTimeout(timer);
+  }, [activeSegmentIndex, charIndex, segments, speed]);
+
+  const isFinished = activeSegmentIndex >= segments.length;
+
+  return (
+    <>
+      {visibleSegments.map((seg, idx) => {
+        const parts = seg.text.split("\n");
+        return (
+          <span key={idx} className={seg.className}>
+            {parts.map((part, pIdx) => (
+              <React.Fragment key={pIdx}>
+                {part}
+                {pIdx < parts.length - 1 && <br />}
+              </React.Fragment>
+            ))}
+          </span>
+        );
+      })}
+      {!isFinished && (
+        <span className="inline-block w-[3px] h-[1.1em] ml-1 bg-pink-500 animate-pulse align-middle" />
+      )}
+    </>
+  );
+};
+
 const HeroSkill = ({
   logo,
   name,
@@ -31,10 +99,26 @@ const Intro = () => {
     <div className="lg:w-[80%] mx-auto  h-full flex  flex-col  justify-evenly overflow-hidden   ">
       <div className="flex    flex-col gap-4 items-center justify-center ">
         <span className=" p-4  ">
-          <h1 className="text-slate-300 font-mono sm:text-2xl mb-20 text-center text-wrap leading-relaxed">
-            Hey, I’m Krishna Zade — a full-stack developer from India. <br />
-            I build fast, scalable web applications and enjoy turning complex problems into clean, intuitive user experiences. <br />
-            With a strong focus on real-world impact, I’m always exploring better ways to design, develop, and optimize solutions.
+          <h1 className="text-slate-300 font-mono sm:text-2xl mb-20 text-center text-wrap leading-relaxed min-h-[9rem] sm:min-h-[6rem] md:min-h-[5rem]">
+            <SegmentedTypewriter
+              segments={[
+                { text: "Hey, I'm " },
+                { text: "Krishna Zade", className: "text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 font-bold" },
+                { text: " ,  " },
+                { text: "developer", className: "text-fuchsia-400 font-semibold" },
+                { text: ", " },
+                { text: "occasional over-engineer", className: "text-violet-400 italic font-semibold" },
+                { text: ", and someone who " },
+                { text: "can't stop building", className: "text-pink-400 font-bold" },
+                { text: ".\n I care about " },
+                { text: "real problems", className: "text-cyan-400 font-semibold" },
+                { text: ", " },
+                { text: "real users", className: "text-emerald-400 font-semibold" },
+                { text: ", and " },
+                { text: "software that holds up", className: "text-amber-400 font-bold" },
+                { text: ".." }
+              ]}
+            />
           </h1>
         </span>
 
