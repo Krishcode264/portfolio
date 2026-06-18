@@ -154,8 +154,22 @@ div {
 
 .resume {
   background: #d4ccd76a;
+}
 
+/* Wavy line animations for dev stream */
+.pulse-wave {
+  stroke-dasharray: 20;
+  animation: flow 15s linear infinite;
+  filter: drop-shadow(0 0 4px #06b6d466);
+}
 
+@keyframes flow {
+  from {
+    stroke-dashoffset: 200;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* @keyframes rotatee {

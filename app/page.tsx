@@ -4,6 +4,7 @@ import Projects from "./projects/page";
 import SectionHeader from "./components/SectionHeader";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import GitStream from "./components/GitStreamOverlay";
 
 export default function Home() {
   return (
@@ -21,6 +22,13 @@ export default function Home() {
         <SectionHeader title="Projects" />
         <div className="max-w-7xl mx-auto">
           <Projects />
+        </div>
+      </section>
+      
+      <section id="open-source" className="min-h-screen py-24">
+        <SectionHeader title="Open Source" />
+        <div className="max-w-7xl mx-auto w-full px-4 flex justify-center">
+          <GitStream />
         </div>
       </section>
 
