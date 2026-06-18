@@ -6,8 +6,8 @@ import Image from "next/image";
 import { projects, type Project } from "../exports";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Github, ExternalLink, Youtube, X } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
+import { Github, ExternalLink, Youtube, X, Volume2, VolumeX } from "lucide-react";
 import { motion } from "framer-motion";
 
 export type linksType = "website" | "github" | "youtube";
@@ -32,6 +32,43 @@ const Links = ({ type, url }: { url: string; type: linksType }) => {
 
 const ProjectItem = ({ p }: { p: Project }) => {
   const [expanded, setExpanded] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Attempt to autoplay with audio on
+    video.muted = false;
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsMuted(false);
+        })
+        .catch(() => {
+          // Fallback to muted autoplay if browser blocks audio autoplay
+          video.muted = true;
+          setIsMuted(true);
+          video.play().catch((err) => {
+            console.log("Playback failed completely:", err);
+          });
+        });
+    }
+  }, [p.thumbnail]);
+
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    if (videoRef.current) {
+      const nextMuted = !videoRef.current.muted;
+      videoRef.current.muted = nextMuted;
+      setIsMuted(nextMuted);
+    }
+  };
+
   const linksArray = Object.entries(p.links).map(([key, value]) => {
     return { key, value };
   });
@@ -48,14 +85,29 @@ const ProjectItem = ({ p }: { p: Project }) => {
       {/* Thumbnail Container */}
       <div className="w-full lg:w-[45%] relative overflow-hidden rounded-[1.5rem] shadow-2xl group-hover:scale-[1.02] transition-all duration-500 border border-white/5 hover:border-white/10 self-start lg:self-center aspect-video shrink-0 max-h-[35vh] md:max-h-[50vh]">
         {typeof p.thumbnail === 'string' && p.thumbnail.endsWith('.mp4') ? (
-          <video
-            className="w-full h-full object-cover object-top block transition-transform duration-700 ease-out group-hover:scale-105"
-            src={p.thumbnail}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
+          <div className="relative w-full h-full">
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover object-top block transition-transform duration-700 ease-out group-hover:scale-105"
+              src={p.thumbnail}
+              autoPlay
+              loop
+              muted={isMuted}
+              playsInline
+            />
+            {/* Mute/Unmute Toggle Button */}
+            <button
+              onClick={toggleMute}
+              className="absolute bottom-4 right-4 z-[30] p-2.5 rounded-full bg-slate-950/90 backdrop-blur-md border border-white/15 text-white hover:bg-slate-900 hover:scale-110 hover:border-white/30 transition-all duration-300 shadow-xl"
+              title={isMuted ? "Unmute video" : "Mute video"}
+            >
+              {isMuted ? (
+                <VolumeX size={16} className="text-slate-300" />
+              ) : (
+                <Volume2 size={16} className="text-pink-400" />
+              )}
+            </button>
+          </div>
         ) : (
           <Image
             className="w-full h-full object-cover object-top block transition-transform duration-700 ease-out group-hover:scale-105"
